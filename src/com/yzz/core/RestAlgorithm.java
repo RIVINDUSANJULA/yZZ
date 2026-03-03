@@ -1,3 +1,5 @@
+package com.yzz.core;
+
 public interface RestAlgorithm {
     /**
      * Gets the duration of the work period in milliseconds.

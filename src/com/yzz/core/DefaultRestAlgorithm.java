@@ -1,3 +1,5 @@
+package com.yzz.core;
+
 public class DefaultRestAlgorithm implements RestAlgorithm {
 
     private final long workDurationMs;

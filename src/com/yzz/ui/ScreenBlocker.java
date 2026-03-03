@@ -1,3 +1,5 @@
+package com.yzz.ui;
+
 import javax.swing.*;
 import java.awt.*;
 

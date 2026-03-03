@@ -1,3 +1,6 @@
+package com.yzz.app;
+
+import com.yzz.ui.ScreenBlocker;
 import javax.swing.*;
 import java.awt.*;
 
@@ -5,7 +8,7 @@ public class Main {
   private static ScreenBlocker blocker;
 
   public static void main(String[] args) {
-    System.out.println("Starting Screen Blocker - Step 4");
+    System.out.println("Starting Screen Blocker");
 
     // Initialize the ScreenBlocker
     blocker = new ScreenBlocker();
