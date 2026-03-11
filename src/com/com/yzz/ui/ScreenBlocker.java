@@ -3,29 +3,34 @@ package com.yzz.ui;
 import javax.swing.*;
 import java.awt.*;
 
-public class ScreenBlocker {
+public class ScreenBlocker extends JFrame {
     private JFrame frame;
 
     public ScreenBlocker() {
-        // Run GUI creation on the Event Dispatch Thread
         SwingUtilities.invokeLater(this::initGUI);
     }
 
     private void initGUI() {
         frame = new JFrame();
-        frame.setUndecorated(true); // Remove title bar and borders
-        frame.setAlwaysOnTop(true); // Keep it above other windows
 
-        // Set background color to black
-        frame.getContentPane().setBackground(Color.BLACK);
+        // No title bar and borders
+        frame.setUndecorated(true);
+
+
+        // Above other windows
+        frame.setAlwaysOnTop(true);
+
+
+        frame.getContentPane();
         frame.setLayout(new GridBagLayout());
 
-        JLabel label = new JLabel("Take a deep breath and rest your eyes...");
+        //DEMO
+        JLabel label = new JLabel("zYYyyyy");
         label.setForeground(Color.WHITE);
         label.setFont(new Font("Arial", Font.BOLD, 36));
         frame.add(label);
 
-        // Make the frame full screen
+        // Full screen
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setBounds(0, 0, screenSize.width, screenSize.height);
     }
@@ -39,8 +44,8 @@ public class ScreenBlocker {
     }
 
     public void hideBlocker() {
-        SwingUtilities.invokeLater(() -> {
-            if (frame != null) {
+        SwingUtilities.invokeLater(() -> {  // Schedule -- put it in a queue and run it as soon as the Event Dispatch Thread is free
+            if (frame != null) {            // Windows Eist???
                 frame.setVisible(false);
             }
         });
@@ -49,7 +54,7 @@ public class ScreenBlocker {
     public void dispose() {
         SwingUtilities.invokeLater(() -> {
             if (frame != null) {
-                frame.dispose();
+                frame.dispose(); // DONE - Take Memory, Destory Resources - Clean UP
             }
         });
     }
