@@ -10,7 +10,19 @@ public class Main {
   public static void main(String[] args) {
     System.out.println("Starting Screen Blocker");
 
-    blocker = new ScreenBlocker();
+
+    //Firebase
+      FileInputStream serviceAccount =
+              new FileInputStream("path/to/serviceAccountKey.json");
+
+      FirebaseOptions options = new FirebaseOptions.Builder()
+              .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+              .build();
+
+      FirebaseApp.initializeApp(options);
+
+
+      blocker = new ScreenBlocker();
 
       blocker.showBlocker();
 
